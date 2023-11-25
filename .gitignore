@@ -1,0 +1,8 @@
+# My .gitignore file
+
+Sudoku.prop
+
+/nbproject/private/
+/build/
+/dist/
+
