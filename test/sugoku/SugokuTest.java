@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sugoku;
 
 import java.io.IOException;
@@ -13,7 +8,6 @@ import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import sudoku.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -22,8 +16,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author thierry.baribaud
+ * Classe permettant de tester le package sugoku
+ * @author Thierry Baribaud
+ * @version 1.0.3
  */
 public class SugokuTest {
 
@@ -61,7 +56,6 @@ public class SugokuTest {
 //        Request request = new Request.Builder()
 //                .url(BASE_URL + "/board")
 //                .build();
-
         HttpUrl.Builder urlBuilder = HttpUrl.parse(BASE_URL + "/board").newBuilder();
         urlBuilder.addQueryParameter("difficulty", "hard");
         String url = urlBuilder.build().toString();

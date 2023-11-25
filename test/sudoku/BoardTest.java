@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sudoku;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -17,8 +12,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author thierry.baribaud
+ * Programme pour tester la grille de jeu
+ * @author Thierry Baribaud
+ * @version 1.0.3
  */
 public class BoardTest {
     
@@ -77,12 +73,15 @@ public class BoardTest {
         board2 = objectMapper.readValue(boardAsString, Board.class);
         System.out.println("board2:"+board2);
 
-        Board board3;
-        board3 = objectMapper.readValue("board:[[0,7,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,9],"+
+        String json = "board:[[0,7,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,9],"+
                     "[0,0,9,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0],"+
                     "[0,0,6,0,0,9,0,1,2],[0,9,0,0,0,0,3,0,0],"+
                     "[6,3,1,5,0,2,0,0,4],[0,0,2,6,4,0,0,3,0],"+
-                    "[9,0,0,8,0,3,0,0,0]]}", Board.class);
+                    "[9,0,0,8,0,3,0,0,0]]}";
+        json=json.replace("board:", "");
+            System.out.println("json:"+json);
+        Board board3;
+        board3 = objectMapper.readValue(json, Board.class);
         System.out.println("board3:"+board3);
         
         } catch (JsonProcessingException ex) {

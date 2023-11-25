@@ -14,8 +14,8 @@ import static org.junit.Assert.*;
 /**
  * Programme qui teste la classe Row
  *
- * @author thierry.baribaud
- * @version 1.0.2
+ * @author Thierry Baribaud
+ * @version 1.0.3
  */
 public class RowTest {
 
